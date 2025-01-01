@@ -6,7 +6,7 @@ const userShecma = new Schema({
     email: {type: String, require: true, unique: true},
     password: {type: String, require: true},
     role: {
-        type: String, default: 'user'
+        type: String, enum: ["user", "admin", "therapist"], default: "user", required: true
     },
     profileImage: String,
     bio: {type: String, maxlength: 200},
